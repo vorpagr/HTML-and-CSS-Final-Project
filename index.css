@@ -1,0 +1,244 @@
+﻿
+body {
+	font-size:100%;
+	background:white;
+    font-family: 'Fjalla One', sans-serif;
+    width: 100%;
+}
+nav {
+	height:98%;
+	background:silver;
+    padding:10px;
+}
+
+a:link, a:visited, a:hover,a:active{
+	color:red;
+}
+p.tip {
+    position: relative;
+    z-index: 200;
+	padding:10px;
+}
+
+p.tip span {
+    display: none;
+}
+
+p.tip:hover span {
+    display: block;
+    position: absolute;
+    width: 200px;
+    padding: 3px;
+    border: 1px solid black;
+    background: linear-gradient(red,white);
+    color: black;
+    text-align: center;
+	margin-top:1%;
+} 
+header{
+	width:100%;
+	margin-top:0%;
+	background:crimson;
+	padding:10px;
+	box-shadow:3px 3px #555; 
+}
+h1{
+	color:white;
+    text-shadow:3px 3px gray;	
+    text-align:center;
+    font-size:3em;
+	font-family: 'Fjalla One', sans-serif;
+    margin-left: 10%;
+}
+h2{
+	color:crimson;
+    text-shadow:1px 1px 1px black;	
+    text-align:center;
+	font-family: 'Fjalla One', sans-serif;	
+    font-size:2em;
+}
+h3{
+	color:crimson;
+    text-shadow:1px 1px gray;	
+    text-align:center;
+	font-family: 'Fjalla One', sans-serif;	
+    font-size:24pt;
+}
+section, div{
+	padding:5px;
+	margin-top:2px;
+}
+footer.contact {
+    background: silver;
+    box-shadow:3px 3px #555;
+    color: black;
+    padding: 15px;
+    margin-top: 5px;
+    width: 100%;
+    font-size:12pt;
+    text-align: center;
+}
+footer.contact img{
+    max-width:300px;
+
+}
+img{
+	width:50%;
+}
+img span{
+	width:150px;
+}
+.box{
+	text-indent:10px;
+	display:inline-grid;
+	margin-right:1%;
+	margin-left:1%;
+	margin-bottom:150px;
+	outline: 2px inset crimson;
+	width:20%;
+}
+.icon-bar {
+
+    width: 100%; 
+    background-color: crimson;
+    overflow: auto;
+}
+
+.icon-bar a {
+    float: left; 
+    text-align: center; 
+    width: 25%; 
+    padding: 12px 0;
+    transition: all 0.8s ease; 
+    color: white; 
+    font-size: 36px; 
+}
+
+.icon-bar a:hover {
+    background-color: #000; 
+}
+.sidenav {  
+    height: 100%;  
+    width: 0;  
+    position: fixed;  
+    z-index: 1; 
+    top: 0;  
+    left: 0;  
+    background-color: #111;  
+    overflow-x: hidden;  
+    transition: 0.5s;  
+    padding-top: 60px;  
+}  
+.sidenav a {  
+    padding: 8px 8px 8px 32px;  
+    text-decoration: none;  
+    font-size: 18px;  
+    color: #818181;  
+    display: block;  
+    transition: 0.3s;  
+}  
+.sidenav a:hover {  
+    color: #f1f1f1;  
+}  
+.sidenav .closebtn {  
+    position: absolute;
+    top: 0;  
+    right: 25px;  
+    font-size: 36px;  
+    margin-left: 50px;  
+}  
+cite:hover{
+    animation:fade-in 3s;
+}
+@keyframes fade-in{
+    0% {opacity: 0.1;}
+    100%{opacity: 1;}
+}
+.title{ 
+	grid-area:head; 
+}
+.menu{ 
+	grid-area:nav; 
+}
+.content{ 
+	grid-area:main; 
+}
+.extra{ 
+	grid-area:icon; 
+}
+.contact{ 
+	grid-area:foot; 
+}
+
+/* For mobile phones: */
+@media only screen and (max-width: 480px) {
+.grid-container{
+	display:grid;
+	grid-template-areas:
+		'head head head head'
+		'nav nav nav nav'
+		'main main main main'
+		'main main main main'
+		'foot foot foot foot';
+	grid-gap:0px;
+	padding:4px;
+}
+.box{
+		margin-right:3%;
+		margin-left:3%;
+	}
+	p.tip span{
+		padding-top:2%;
+		padding-right:2%;
+	}
+header img{
+		display:none;
+	}
+.sidenav {padding-top: 15px;} 
+.sidenav a {font-size: 18px;} 
+.icon-bar{
+    display: none;
+}
+cite{
+    font-size: 10pt;
+}
+}
+/* For tablets: */
+@media only screen and (min-width:481px) {
+	.grid-container{
+		display:grid;
+		grid-template-areas:
+			'head head head'
+            'nav nav nav'
+			'main main main'
+			'main main main'
+			'foot foot foot';
+		grid-gap:0px;
+		padding:5px;
+	}
+    .box{
+		margin-right:3%;
+		margin-left:3%;
+	}
+	p.tip span{
+		padding-top:2%;
+		padding-right:2%;
+	}
+
+}
+
+/* For desktop: */
+@media only screen and (min-width: 769px) {
+	.grid-container{
+		display:grid;
+		grid-template-areas:
+			'head head head head head head'
+			'nav nav main main main main'
+			'nav nav main main main main'
+			'foot foot foot foot foot foot'
+            'icon icon icon icon icon icon';
+		grid-gap:0px;
+		padding:0px;
+	}
+}
+
